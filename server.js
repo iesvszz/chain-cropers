@@ -18,10 +18,12 @@ mongoose.connect(process.env.MONGO_URI, {
 // Import Routes
 const farmerRoutes = require("./routes/farmers");
 const productRoutes = require("./routes/products");
+const paymentRoutes = require("./routes/payments");
 
 // Use Routes
 app.use("/farmers", farmerRoutes);
-app.use("/products", productRoutes); // Ensure this line exists
+app.use("/products", productRoutes); 
+app.use("/payments", paymentRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
